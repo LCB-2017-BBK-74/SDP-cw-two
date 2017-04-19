@@ -25,6 +25,9 @@ trait ByteCodeValues {
 
   /**
     * A map from bytecode names to a unique byte that represents them.
+    * The bytecode values in the map simply corresponds to the position of the bytecode names in the vector of names
+    * bytecode: scala.collection.immutable.Map[String,Byte] =
+    * Map(ineg -> 7, iswap -> 11, idiv -> 5, print -> 12, iinc -> 8, imul -> 4, iconst -> 1, idec -> 9, isub -> 3, irem -> 6, idup -> 10, iadd -> 2)
     */
   val bytecode = names.zip(1.to(names.length).map(_.toByte)).toMap
 }

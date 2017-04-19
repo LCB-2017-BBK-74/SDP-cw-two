@@ -10,7 +10,7 @@ class ByteCodeFactoryConcrete extends ByteCodeFactory {
 
   override def make(byte: Byte, args: Int*): ByteCode = byte match {
 
-    case "iconst" => new ConstByteCode //NB. need to turn string into a Byte
+    //case "iconst" => new ConstByteCode //NB. need to turn string into a Byte
 
     case _ => throw new InvalidBytecodeException("the Byte provided is not in the list of available ByteCodeValues")
   }
