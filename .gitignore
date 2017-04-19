@@ -1,0 +1,27 @@
+*.class
+*.log
+
+.idea
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.properties
+.sbt
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Hidden mac files
+.DS_Store
+
+# IntelliJ files
+.iml

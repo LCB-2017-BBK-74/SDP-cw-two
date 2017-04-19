@@ -1,0 +1,30 @@
+Implementation notes
+
+@author LucieCBurgess
+@author MattBostock
+@author SonamSadarangani
+
+Part II - Implement Vendor Parser
+
+1. Implement vendor.ProgramParser - use the src/main/scala directory. Use some example program files under the programs
+    directory as test cases - the implementation should work for these files
+
+    Implementation is in src/main/scala/vendor/ProgramParserConcrete
+
+NB. I haven't yet deal with exceptions to the main instruction format which is is Vector[String, Int].
+Not sure whether to do that now, or at part IV?
+
+
+2. Modify factory.VirtualMachineFactory to return an instance of the implementation from the vendorParser method
+
+This is very simple: just have to modify the code in VirtualMachineFactory to use ProgramParserConcrete as
+its type of ProgramParser
+
+Part III - Implement Bytecodes
+
+3. Implement a bytecode for each of the defined bytecodes in the bc.ByteCodeValues trait (under bc.ByteCode trait)
+    These should each be classes which extend the ByteCode trait.
+
+
+
+
