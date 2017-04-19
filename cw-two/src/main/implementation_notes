@@ -42,6 +42,11 @@ val a = Vector(bytecode("iconst"), 4.toByte, bytecode("iconst"), 5.toByte, bytec
 a.parse <- produces a Vector of 4 ByteCode objects: Vector(ConstByteCode, ConstByteCode, AddByteCode, PrintByteCode)
 
 Note the vector of ByteCode objects has 4 elements as iconst instructions have arguments.
+NB. This didn't work with a for loop - couldn't dynamically update the index, error: reassignment to val.
+
+Using a while loop instead and updating the index until it exceeds a boundary condition fixes the problem.
+
+
 
 
 
