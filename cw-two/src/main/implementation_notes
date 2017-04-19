@@ -25,6 +25,14 @@ Part III - Implement Bytecodes
 3. Implement a bytecode for each of the defined bytecodes in the bc.ByteCodeValues trait (under bc.ByteCode trait)
     These should each be classes which extend the ByteCode trait.
 
+ Fairly straightforward - note the pop() instruction in the (as yet unimplemented) VirtualMachine class is a tuple (int, vm)
+
+4. Implement the bc.ByteCodeFactory that creates new bytecodes given a byte and arguments.
+If you find it helpful you can override the toString method to print out the bytecode names to the console so you can
+see if your code is working correctly.
+
+
+
 
 
 
