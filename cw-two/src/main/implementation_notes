@@ -31,6 +31,17 @@ Part III - Implement Bytecodes
 If you find it helpful you can override the toString method to print out the bytecode names to the console so you can
 see if your code is working correctly.
 
+5. Implement bc.ByteCodeParser. Can be tested easily from the console by providing a vector of bytes and inspecting the returned
+vector to ensure it is working correctly. NB a byte is the corresponding position of the bytecode name in the vector of names
+
+i.e. bytecode: scala.collection.immutable.Map[String,Byte] = Map(ineg -> 7, iswap -> 11, idiv -> 5, print -> 12, iinc -> 8, imul -> 4, iconst -> 1, idec -> 9, isub -> 3, irem -> 6, idup -> 10, iadd -> 2)
+
+For instance given the following vector:
+val a = Vector(bytecode("iconst"), 4.toByte, bytecode("iconst"), 5.toByte, bytecode("iadd"), bytecode("print")
+
+a.parse <- produces a Vector of 4 ByteCode objects: Vector(ConstByteCode, ConstByteCode, AddByteCode, PrintByteCode)
+
+Note the vector of ByteCode objects has 4 elements as iconst instructions have arguments.
 
 
 
