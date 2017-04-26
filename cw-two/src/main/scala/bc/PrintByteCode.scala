@@ -24,9 +24,9 @@ class PrintByteCode extends ByteCode with ByteCodeValues {
     * @return a new virtual machine
     */
   override def execute(vm: VirtualMachine): VirtualMachine = {
-    var res1 = vm.pop()._1
+    val (res1, vm1) = vm.pop()
     println(res1)
-    vm
+    vm1
   }
 
 }

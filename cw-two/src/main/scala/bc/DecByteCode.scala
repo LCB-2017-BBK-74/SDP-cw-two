@@ -24,9 +24,8 @@ class DecByteCode extends ByteCode with ByteCodeValues {
     * @return a new virtual machine
     */
   override def execute(vm: VirtualMachine): VirtualMachine = {
-    var res1 = vm.pop()._1
-    vm.push(res1-1)
-    vm
+    val res1 = vm.pop()._1
+    vm.push(res1 - 1)
   }
 
 }

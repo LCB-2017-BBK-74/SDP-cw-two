@@ -25,10 +25,9 @@ class DupByteCode extends ByteCode with ByteCodeValues {
     * @return a new virtual machine
     */
   override def execute(vm: VirtualMachine): VirtualMachine = {
-    var res1 = vm.pop()._1
-    vm.push(res1)
-    vm.push(res1)
-    vm
+    val (res1, vm1) = vm.pop()
+    val vm2 = vm1.push(res1)
+    vm2.push(res1)
   }
 
 }

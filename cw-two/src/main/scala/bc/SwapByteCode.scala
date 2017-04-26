@@ -25,11 +25,10 @@ class SwapByteCode extends ByteCode with ByteCodeValues {
     * @return a new virtual machine
     */
   override def execute(vm: VirtualMachine): VirtualMachine = {
-    var res1 = vm.pop()._1
-    var res2 = vm.pop()._1
-    vm.push(res1)
-    vm.push(res2)
-    vm
+    val (res1, vm1) = vm.pop()
+    val (res2, vm2) = vm1.pop()
+    val vm3 = vm2.push(res1)
+    vm3.push(res2)
   }
 
 }
