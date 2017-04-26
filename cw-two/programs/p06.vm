@@ -1,0 +1,3 @@
+iconst 4
+iconst 3
+iadd
