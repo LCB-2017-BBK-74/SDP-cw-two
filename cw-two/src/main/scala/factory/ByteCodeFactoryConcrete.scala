@@ -18,10 +18,10 @@ class ByteCodeFactoryConcrete extends ByteCodeFactory with ByteCodeValues {
     case byte if bytecode.apply("iinc").equals(byte) => new IncByteCode
     case byte if bytecode.apply("imul").equals(byte) => new MulByteCode
     case byte if bytecode.apply("ineg").equals(byte) => new NegByteCode
-    case byte if bytecode.apply("print").equals(byte) => new PrintByteCode
     case byte if bytecode.apply("irem").equals(byte) => new RemByteCode
     case byte if bytecode.apply("isub").equals(byte) => new SubByteCode
     case byte if bytecode.apply("iswap").equals(byte) => new SwapByteCode
+    case byte if bytecode.apply("print").equals(byte) => new PrintByteCode
     case _ => throw new InvalidBytecodeException("invalid bytecode value")
   }
 
