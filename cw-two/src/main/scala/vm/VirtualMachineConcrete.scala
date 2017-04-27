@@ -24,7 +24,7 @@ class VirtualMachineConcrete (stack : Vector[Int] = Vector()) extends VirtualMac
     }
 
     val (next, vm) = this.executeOne(bc)
-    return vm.execute(next)
+    vm.execute(next)
   }
 
   /**
