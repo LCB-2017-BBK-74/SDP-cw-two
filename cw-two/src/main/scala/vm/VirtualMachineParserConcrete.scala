@@ -21,9 +21,9 @@ class VirtualMachineParserConcrete extends VirtualMachineParser {
     * if it fails to parse a program file correctly.
     *
     * @param file the file containing a program
+    * @throws (classOf[bc.InvalidBytecodeException) if file fails to parse correctly
     * @return a vector of bytecodes
     */
-   // FIXME document exception bc.InvalidBytecodeException
   def parse(file: String): Vector[ByteCode] = {
     try {
       val bytes = ppc.parse(file).flatMap(i =>
@@ -43,9 +43,9 @@ class VirtualMachineParserConcrete extends VirtualMachineParser {
     * if it fails to parse a program string correctly.
     *
     * @param str a string containing a program
+    * @throws (classOf[bc.InvalidBytecodeException) if string fails to parse correctly
     * @return a vector of bytecodes
     */
-   // FIXME document exception bc.InvalidBytecodeException
    // FIXME need to deduplicate the logic in this function
    // FIXME need to add a test for this function (doesn't seem to have coverage)
   def parseString(str: String): Vector[ByteCode] = {
