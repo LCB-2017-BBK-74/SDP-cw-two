@@ -1,20 +1,13 @@
 package vm
 
 import bc.ByteCode
-import scala.collection.immutable.Stack
 import scala.collection.immutable.Vector
 
 /**
   * Created by mattbostock on 22/04/2017.
   * @author Matt Bostock
   */
-class VirtualMachineConcrete (stackVector : Vector[Int] = Vector()) extends VirtualMachine {
-  /**
-   * Convert the stack vector in the constructor into a stack type we can
-   * manipulate more easily.
-   */
-  val stack = stackVector.to[Stack]
-
+class VirtualMachineConcrete (stack : Vector[Int] = Vector()) extends VirtualMachine {
   /**
     * Executes a vector of bytecodes.
     *
@@ -77,5 +70,5 @@ class VirtualMachineConcrete (stackVector : Vector[Int] = Vector()) extends Virt
     *
     * @return the state of the stack
     */
-  def state: Vector[Int] = { this.stack.to[Vector] }
+  def state: Vector[Int] = { this.stack }
 }
