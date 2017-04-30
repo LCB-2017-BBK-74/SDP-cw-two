@@ -13,6 +13,12 @@ class PublicVirtualMachineSuite extends FunSuite {
     val vm2 = vm.execute(bc)
   }
 
+  test("an executed program should give the expected result") {
+    val bc  = vmp.parse("programs/p06.vm")
+    val vm2 = vm.execute(bc)
+    assert(vm2.state.head == 7)
+  }
+
   test("[2] iconst should work correctly") {
     val bc  = vmp.parseString("iconst 1")
     val (bc2, vm2) = vm.executeOne(bc)
