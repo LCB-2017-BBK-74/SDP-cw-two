@@ -3,7 +3,8 @@ package factory
 import bc._
 
 /**
-  * @author Created by lucieburgess on 17/04/2017.
+  * @author Created by lucieburgess on 17/04/2017, reviewed by  MattBostock 26/04/2017
+  *    This class makes ByteCode instructions at runtime based on bytecode
   * Bytecode names: "iconst", "iadd", "isub", "imul", "idiv", "irem","ineg", "iinc", "idec", "idup", "iswap", "print"
   */
 class ByteCodeFactoryConcrete extends ByteCodeFactory with ByteCodeValues {
