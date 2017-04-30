@@ -47,10 +47,15 @@ Using a while loop instead and updating the index until it exceeds a boundary co
 
 Part IV - Implement Virtual Machine
 
-Have used a constructor argument here for stack: Vector[Int] as this provides a tightly coupled instance variable
+VirtualMachineConcrete: Have used a constructor argument here for stack: Vector[Int] as this provides a tightly coupled instance variable
 for the stack of the virtual machine.
 Note that Stack is deprecated in Scala so Vector[Int] is used as the data structure to store the state of the VM.
 
+VirtualMachineParserConcrete: defined a helper function adapter that adapts the vendor program parser to the virtual machine parser.
+
+Added tests for parseString(str) which did not have coverage.
+
+Added some extra tests for the ByteCode instructions.
 
 
 

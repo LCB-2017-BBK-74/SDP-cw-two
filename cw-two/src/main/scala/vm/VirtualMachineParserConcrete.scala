@@ -50,7 +50,6 @@ class VirtualMachineParserConcrete extends VirtualMachineParser with ByteCodeVal
     * @return a vector of bytecodes
     */
 
-   // FIXME need to add a test for this function (doesn't seem to have coverage)
   def parseString(str: String): Vector[ByteCode] = {
      val instrs = ppc.parseString(str)
     try {
