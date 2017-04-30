@@ -56,5 +56,74 @@ class PublicVirtualMachineSuite extends FunSuite {
     assert(next._2.state(1) == 2)
   }
 
+  test("[7] imul should work correctly") {
+    val bc  = vmp.parseString("iconst 2\niconst 3\nimul")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 2)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 3)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 6)
+  }
+
+  test("[8] idiv should work correctly") {
+    val bc  = vmp.parseString("iconst 2\niconst 6\nidiv")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 2)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 6)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 3)
+  }
+
+  test("[9] idec should work correctly") {
+      val bc  = vmp.parseString("iconst 2 \nidec")
+      var next = vm.executeOne(bc)
+      assert(next._2.state.head == 2)
+      next = next._2.executeOne(next._1)
+      assert(next._2.state.head == 1)
+  }
+
+  test("[10] iinc should work correctly") {
+    val bc  = vmp.parseString("iconst 2 \niinc")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 2)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 3)
+  }
+
+  test("[11] idup should work correctly") {
+    val bc  = vmp.parseString("iconst 2 \nidup")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 2)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 2)
+  }
+
+  test("[12] ineg should work correctly") {
+      val bc  = vmp.parseString("iconst 5 \nineg")
+      var next = vm.executeOne(bc)
+      assert(next._2.state.head == 5)
+      next = next._2.executeOne(next._1)
+      assert(next._2.state.head == -5)
+  }
+
+  test("[13] print should work correctly") {
+    val bc  = vmp.parseString("iconst 5 \nprint")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 5)
+    next = next._2.executeOne(next._1)
+    // should print 5 to the console
+  }
+
+  test("[14] irem should work correctly") {
+    val bc  = vmp.parseString("iconst 2\niconst 5\nirem")
+    var next = vm.executeOne(bc)
+    assert(next._2.state.head == 2)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 5)
+    next = next._2.executeOne(next._1)
+    assert(next._2.state.head == 1)
+  }
 
 }
