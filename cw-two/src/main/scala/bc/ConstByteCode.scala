@@ -3,8 +3,9 @@ package bc
 import vm.VirtualMachine
 
 /**
-  * Created by lucieburgess on 17/04/2017.
-  * Include the integer in the constructor of the class - this is the only instruction that takes an integer value
+  * @author Created by LucieCBurgess on 17/04/2017, reviewed and updated by MattBostock 26/04/2017
+  *         Represents a iConst bytecode operation - that is, represents a constant integer value
+  * Integer value incorporated in the constructor as this gives a tightly coupled instance variable.
   */
 class ConstByteCode(val num: Int) extends ByteCode with ByteCodeValues {
 

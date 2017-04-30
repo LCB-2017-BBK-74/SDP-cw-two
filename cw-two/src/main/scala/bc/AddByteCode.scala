@@ -3,7 +3,8 @@ package bc
 import vm.VirtualMachine
 
 /**
-  * Created by lucieburgess on 17/04/2017.
+  * @author Created by LucieCBurgess on 17/04/2017, reviewed and updated by MattBostock on 26/04/2017
+  *         Represents an Add bytecode operation
   */
 class AddByteCode extends ByteCode with ByteCodeValues {
 

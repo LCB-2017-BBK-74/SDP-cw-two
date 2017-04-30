@@ -2,7 +2,6 @@ Implementation notes
 
 @author LucieCBurgess
 @author MattBostock
-@author SonamSadarangani
 
 Part II - Implement Vendor Parser
 
@@ -18,7 +17,7 @@ Not sure whether to do that now, or at part IV?
 2. Modify factory.VirtualMachineFactory to return an instance of the implementation from the vendorParser method
 
 This is very simple: just have to modify the code in VirtualMachineFactory to use ProgramParserConcrete as
-its type of ProgramParser
+its type of ProgramParser. Ditto for other concrete classes
 
 Part III - Implement Bytecodes
 
@@ -45,6 +44,14 @@ Note the vector of ByteCode objects has 4 elements as iconst instructions have a
 NB. This didn't work with a for loop - couldn't dynamically update the index, error: reassignment to val.
 
 Using a while loop instead and updating the index until it exceeds a boundary condition fixes the problem.
+
+Part IV - Implement Virtual Machine
+
+Have used a constructor argument here for stack: Vector[Int] as this provides a tightly coupled instance variable
+for the stack of the virtual machine.
+Note that Stack is deprecated in Scala so Vector[Int] is used as the data structure to store the state of the VM.
+
+
 
 
 
