@@ -3,7 +3,7 @@ package bc
 import factory.ByteCodeFactoryConcrete
 
 /**
-  * Created by lucieburgess on 19/04/2017.
+  * Created by Lucieburgess on 19/04/2017, reviewed and updated by MattBostock 26/04/2017
   * @author LucieCBurgess, Matt Bostock
   */
 class ByteCodeParserConcrete extends ByteCodeParser with ByteCodeValues {

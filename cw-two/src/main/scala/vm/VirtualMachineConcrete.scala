@@ -4,10 +4,9 @@ import bc.ByteCode
 import scala.collection.immutable.Vector
 
 /**
-  * Created by mattbostock on 22/04/2017.
-  * @author Matt Bostock
+  * @author Created by mattbostock on 22/04/2017, reviewed by LucieCBurgess 28/04/2017
   */
-class VirtualMachineConcrete (stack : Vector[Int] = Vector()) extends VirtualMachine {
+class VirtualMachineConcrete (stack: Vector[Int] = Vector[Int]()) extends VirtualMachine {
   /**
     * Executes a vector of bytecodes.
     *
@@ -32,9 +31,10 @@ class VirtualMachineConcrete (stack : Vector[Int] = Vector()) extends VirtualMac
     *
     * This method only executes a single byte code in the vector of bytecodes.
     * It returns a tuple of the new vector of bytecodes (with the executed
-    * bytecode removed) and the new virtual machine.
+    * bytecode removed) and the new virtual machine, with the state updated to be the state of the previous vm.
     *
     * You may assume that `bc` contains at least 1 bytecode.
+    * NB. the call to execute (bc.head.execute) refers to executing the ByteCode instruction. e.g. AddByteCode
     *
     * @param bc the vector of bytecodes
     * @return a tuple of a new vector of bytecodes and virtual machine

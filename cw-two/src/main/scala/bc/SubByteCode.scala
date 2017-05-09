@@ -3,7 +3,7 @@ package bc
 import vm.VirtualMachine
 
 /**
-  * @author Created by LucieCburgess on 17/04/2017.
+  * @author Created by LucieCBurgess on 17/04/2017, reviewed and updated by MattBostock 26/04/2017
   */
 class SubByteCode extends ByteCode with ByteCodeValues {
 
