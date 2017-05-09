@@ -66,9 +66,7 @@ class VirtualMachineParserConcrete extends VirtualMachineParser with ByteCodeVal
     * @return bytes, the vector of Bytes.
     */
   private def instructionsToBytes(instrs: Vector[Instruction]): Vector[Byte] = {
-    val bytes: Vector[Byte] = instrs.flatMap(i =>
-      (Vector(bcp.bytecode.apply(i.name)) ++ i.args.map(_.toByte)))
-    bytes
+    instrs.flatMap(i => (Vector(bcp.bytecode.apply(i.name)) ++ i.args.map(_.toByte)))
   }
 
 }
