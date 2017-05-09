@@ -31,7 +31,7 @@ class VirtualMachineParserConcrete extends VirtualMachineParser with ByteCodeVal
   def parse(file: String): Vector[ByteCode] = {
     try {
       val instrs = ppc.parse(file)
-      val bytes = adapter(instrs)
+      val bytes = instructionsToBytes(instrs)
       bcp.parse(bytes)
     } catch {
       case NonFatal(ex) => throw new InvalidBytecodeException(ex.toString)
@@ -53,7 +53,7 @@ class VirtualMachineParserConcrete extends VirtualMachineParser with ByteCodeVal
   def parseString(str: String): Vector[ByteCode] = {
     try {
       val instrs = ppc.parseString(str)
-      val bytes = adapter(instrs)
+      val bytes = instructionsToBytes(instrs)
       bcp.parse(bytes)
     } catch {
       case NonFatal(ex) => throw new InvalidBytecodeException(ex.toString)
@@ -65,7 +65,7 @@ class VirtualMachineParserConcrete extends VirtualMachineParser with ByteCodeVal
     * @param instrs, a vector[Instruction] to translate to a vector[Byte] using the adapter pattern
     * @return bytes, the vector of Bytes.
     */
-  private def adapter(instrs: Vector[Instruction]): Vector[Byte] = {
+  private def instructionsToBytes(instrs: Vector[Instruction]): Vector[Byte] = {
     val bytes: Vector[Byte] = instrs.flatMap(i =>
       (Vector(bcp.bytecode.apply(i.name)) ++ i.args.map(_.toByte)))
     bytes
